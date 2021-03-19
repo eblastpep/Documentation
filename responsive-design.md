@@ -1,5 +1,7 @@
 # Responsive Design
 
+## Responsive Design
+
 Responsive web design, a term [first coined by Ethan Marcotte](http://alistapart.com/article/responsive-web-design), is the practice of crafting websites in a way that they are usable regardless of which device is used to access them. The responsive web is largely reliant on [media queries](http://www.w3.org/TR/css3-mediaqueries/) to drive that adaptation. More recently, this approach has been brought to the world of HTML email.
 
 A media query follows a pretty simple structure. For the purposes of email, the media query’s styles are nested within the emails **&lt;style&gt;** tag:
@@ -36,7 +38,7 @@ There are [many different media features](http://www.w3.org/TR/css3-mediaqueries
 
 The difference between them is how they calculate the maximum width that will trigger the media query. The feature **max-width** is measured against the available space of a browser, while **max-device-width** looks at the size of the device’s screen. Essentially, max-width covers everything and max-device-width covers small displays.
 
-We want to cover everything. In this case, the media feature is used to target an area that measures 480 pixels in width or smaller. 480px is the standard width of a mobile phone’s screen in landscape orientation, and a good standard breakpoint to use in your code.
+We want to cover everything. In this case, the media feature is used to target an area that measures 480 pixels in width or smaller. 480px is the standard width of a mobile phone’s screen in landscape orientation, and a good standard breakpoint to use in your code
 
 ### Media Queries and Inline Styles
 
@@ -60,7 +62,7 @@ Because inline styles have the highest specificity in the cascade, it’s necess
 </style>
 ```
 
-## Increasing Text Size
+### Increasing Text Size
 
 Using media queries to increase an email’s text size when it’s viewed on a mobile device is one of the easiest things you can do to make an email better for readers. Here’s the standard CSS for our email’s body copy:
 
@@ -89,11 +91,11 @@ When the media query is triggered on screens less than 480px wide, the text size
 
 ![](https://cdn-images.mailchimp.com/email-reference/development/media-queries/text-resize.png)
 
-## Responsive Column Layouts
+### Responsive Column Layouts
 
 It can be difficult to read a multi-column email on a small screen; having to scroll horizontally is kind of a pain. Reading on small displays tends to work better if it’s done in a linear fashion, from top-to-bottom. Using media queries we can switch a multi-column layout to a single-column one, making it easier to read an email. There are two methods that will be covered here, each with its pros and cons.
 
-### Method 1 - Block-level  Elements
+#### Method 1 - Block-level  Elements
 
 The first method uses the same column structure covered in the HTML section’s [Column Layouts](https://templates.mailchimp.com/development/html/column-layouts) page. Here’s that code:
 
@@ -173,7 +175,7 @@ As we mentioned, each method has its pros and cons. This method is the most stab
 
 So, if your aim is stability over flexibility, this is the way to go.
 
-### Method 2 - Aligned table Elements
+#### Method 2 - Aligned table Elements
 
 Method 2 is the opposite of the first; its strength is flexibility, but it’s not very stable. The columns are coded a little differently:
 
@@ -231,7 +233,7 @@ Setting the width of each column to 100% allows them to fill the available scree
 
 In spite of those issues, the flexibility inherent to this method and how it allows for layout switching, which you can see covered in [Layout Manipulation](https://templates.mailchimp.com/development/responsive-email/layout-manipulation), is the best reason to use it.
 
-## Usable Link Groups
+### Usable Link Groups
 
 There are places in an email where a group of several links are clustered together. The most common example can be found in the footer of an email, where utility links like ‘view in browser’, ‘unsubscribe’, and ‘follow us on twitter’ often appear:
 
@@ -321,7 +323,7 @@ By giving them a background color, we’re essentially turning each of those lin
 
 ![](https://cdn-images.mailchimp.com/email-reference/development/media-queries/usable-link-group-after.png)Each link is now easy to tap with a finger, and everyone’s happy.
 
-## Adaptive Buttons
+### Adaptive Buttons
 
 It can be helpful, in certain situations, to have an email’s button span the full width of the screen on mobile devices. While right-handed users are more comfortable tapping the left side of a phone screen with their thumbs, left-handed users are more comfortable tapping the right. In the case of a strong call-to-action, like a button, making it easy for anyone press can be beneficial.
 
@@ -361,7 +363,7 @@ The code above results in a more usable and readable button:
 
 ![](https://cdn-images.mailchimp.com/email-reference/development/media-queries/button-resize-after.png)
 
-## Fluid Images
+### Fluid Images
 
 Having your images resize on small screens is one of the most important benefits of using media queries, especially where email is concerned. Since one of the most common media query trigger sizes for emails is 480px \(the width of most phones in landscape orientation\), images wider than that 480px would result in some horizontal scrolling, which should generally be avoided.
 
@@ -391,7 +393,7 @@ When the email is viewed on a screen that is 480px and smaller, the image has it
 
 ![](https://cdn-images.mailchimp.com/email-reference/development/media-queries/image-resize.png)The image is fluid, so it will fill its available space regardless of whether the screen orientation is portrait or landscape, and readers don’t have to deal with horizontal scrolling.
 
-## Layout Manipulation
+### Layout Manipulation
 
 As we mentioned in [Responsive Multi-column Layouts](https://templates.mailchimp.com/development/responsive-email/responsive-column-layouts), using aligned `<table>` elements as columns allows for a lot of flexibility in terms of mobile layout. The clearest example of that is an email with a left sidebar and right main content area:
 
@@ -469,9 +471,9 @@ There’s a major problem with using this aligned table method, specifically hav
 
 The [captioned image](https://templates.mailchimp.com/development/html/captioned-images) design pattern is ubiquitous in email, so building responsive versions of this pattern is a must. The way these responsive blocks work is mechanically similar to [responsive column layouts](https://templates.mailchimp.com/development/responsive-email/responsive-column-layouts), with some extra bits mixed in.
 
-## Responsive Captioned Images
+### Responsive Captioned Images
 
-### Top Caption Image
+#### Top Caption Image
 
 For images with a top or bottom caption, the code is straightforward. These two patterns are built using one two-row table. For styling flexibility, the caption text is contained within a nested table:
 
@@ -500,7 +502,7 @@ For images with a top or bottom caption, the code is straightforward. These two 
 </table>
 ```
 
-### Bottom Caption Image
+#### Bottom Caption Image
 
 The bottom caption image uses the same code, with the row order swapped:
 
@@ -529,7 +531,7 @@ The bottom caption image uses the same code, with the row order swapped:
 </table>
 ```
 
-### Responsive Top & Bottom Caption Image
+#### Responsive Top & Bottom Caption Image
 
 A responsive version of the top and bottom caption image block is driven primarily by the media query style attached to the image, which needs to be made fluid or adaptive to multiple display sizes.
 
@@ -571,7 +573,7 @@ A responsive version of the top and bottom caption image block is driven primari
 </style>
 ```
 
-### Right Caption Image
+#### Right Caption Image
 
 Right and left caption image blocks are slightly more complex in the way they’re constructed. Essentially, there are [two methods](https://templates.mailchimp.com/development/responsive-email/responsive-column-layouts) to building this pattern. Here, we’ll concentrate on the ‘aligned table’ method, since it’s the most flexible. The block is built using two aligned tables, nested within a containing table. One aligned table holds the image, the other holds the text:
 
@@ -602,7 +604,7 @@ Right and left caption image blocks are slightly more complex in the way they’
 </table>
 ```
 
-### Left Caption Image
+#### Left Caption Image
 
 ![](https://cdn-images.mailchimp.com/email-reference/resources/email-design-patterns/caption-image-left.jpg)For an image block with a caption on the left side, the only change that needs to be made is to the values in each tables align attribute. Simply swap the alignment direction, and you get the desired layout change:
 
@@ -633,7 +635,7 @@ Right and left caption image blocks are slightly more complex in the way they’
 
 Here, the reason we only change the value of the align attribute is so that we follow the semantic standard laid out for [layout manipulation](https://templates.mailchimp.com/development/responsive-email/layout-manipulation). On small displays, when the media query kicks in and the responsive version of the block is rendered, our content maintains an order that makes sense.
 
-### Responsive Right & Left Caption Image
+#### Responsive Right & Left Caption Image
 
 A responsive version of the right & left caption image blocks requires a slightly more complex media query ruleset. Not only does the image have to be made fluid, the side-by-side layout must be swapped to a vertical stack as well:
 
