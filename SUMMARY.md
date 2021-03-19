@@ -1,7 +1,6 @@
 # Table of contents
 
-* [CSS Considerations](README.md)
-* [CSS](css.md)
+* [CSS](README.md)
 * [HTML](css-considerations.md)
 * [Responsive Design](responsive-design.md)
 

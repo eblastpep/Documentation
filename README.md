@@ -1,4 +1,4 @@
-# CSS Considerations
+# CSS
 
 In building emails, knowledge of how to properly deal with CSS is key. While CSS in email tends to be pretty straightforward in that you’re dealing with the same syntax and code that you do in traditional web design, there are notable differences that sometimes run counter to standards-based web design wisdom.
 
